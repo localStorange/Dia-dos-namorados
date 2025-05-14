@@ -139,7 +139,12 @@
 
             </p>
         </section>
-<section>
+
+         <header>
+        <h1> Mais um momento feliz ao seu lado ❤️</h1>
+        </header>
+
+        <section>
             <h2></h2>
             <iframe 
                 width="800" 
@@ -150,6 +155,59 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
+        </section>
+
+        <section>
+            <p> Como "Duas metades" nos acompanhou dede o inicio, nada mais justo que seja nossa musica, mas claro, se você concordar. 
+                Ela é tão especial que esteve no nosso primeiro encontro,e eu te dediquei inumeras vezes. É como diz na musica "O que 
+                de um grande amor se espera É que tenha fogo Que domina o pensamento E traga sentido novo Que tenha paixão, desejo Que 
+                tenha abraço e beijo E seja a melhor sensação", pode ter certeza meu amor, estar ao seu lado é a melhor sensação que eu
+                já senti.                                  
+            </p>
+        </section>
+
+
+         <header>
+        <h1> E por fim ❤️</h1>
+        </header>
+
+         <section>
+             <p>
+                 <b> Como prometido. 
+            </p>
+         </section>
+
+         <!-- Segundo Áudio (novo ID) -->
+        <audio id="audioPlayer2" loop>
+            <source src="audio/WhatsApp Ptt 2025-05-14 at 15.39.04.ogg" type="audio/ogg">
+        </audio>
+
+        <!-- Botões e controles para o segundo áudio (copie o mesmo estilo do primeiro) -->
+        <button id="playPauseBtn2" onclick="toggleAudio2()">▶️</button>
+        <div>
+            <span id="currentTime2">00:00</span> / <span id="durationTime2">00:00</span>
+        </div>
+        <input type="range" id="progressBar2" value="0" max="100" step="1" onchange="setAudioTime2(this.value)">
+
+        <section>
+
+            <p>My love, you are one of the main reasons for my evolution, whether as a man or as a student. 
+            You showed me that there is no point in changing for others, but rather, I have to be okay 
+            with myself and change for myself, and I am grateful for that. You are my other half, my soulmate, 
+            my princess, my love, the woman I chose to be my future wife and who will be the mother of my children. 
+            I will never tire of thanking God for having placed you in my life. You have taught me countless things, 
+            and one of them was to rest on vacation. You are an example of a woman and I am very proud of you, of 
+            your daily effort, of always making yourself available to help those in need, of often thinking twice 
+            before responding to any nonsense I send when you are stressed. I realize how afraid you are of hurting 
+            me, but it is like I said when we were getting to know each other: I accept both your perfections and your 
+            imperfections, and I will always be by your side, in good times and in bad.
+            </p>
+        </section>
+
+        <section>
+
+            <p> Tradução abaixo
+            </p>
         </section>
 
         <section>
@@ -226,6 +284,41 @@
             audio.currentTime = (value / 100) * audio.duration;
         }
     </script>
+
+    <script>
+    // Controles para o segundo áudio
+    function toggleAudio2() {
+        var audio = document.getElementById('audioPlayer2');
+        var btn = document.getElementById('playPauseBtn2');
+        
+        if (audio.paused) {
+            audio.play();
+            btn.innerHTML = "⏸️";
+        } else {
+            audio.pause();
+            btn.innerHTML = "▶️";
+        }
+    }
+
+    // Atualizações de tempo para o segundo áudio
+    var audio2 = document.getElementById('audioPlayer2');
+    var currentTimeDisplay2 = document.getElementById('currentTime2');
+    var durationTimeDisplay2 = document.getElementById('durationTime2');
+    var progressBar2 = document.getElementById('progressBar2');
+
+    audio2.onloadeddata = function() {
+        durationTimeDisplay2.textContent = formatTime(audio2.duration);
+    }
+
+    audio2.ontimeupdate = function() {
+        currentTimeDisplay2.textContent = formatTime(audio2.currentTime);
+        progressBar2.value = (audio2.currentTime / audio2.duration) * 100;
+    }
+
+    function setAudioTime2(value) {
+        audio2.currentTime = (value / 100) * audio2.duration;
+    }
+</script>
 
  
 </body>
